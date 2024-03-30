@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <title>Wellness Center</title>
+  </head>
+  <body class="font-[poppins]">
+    <nav
+      id="navbar"
+      class="w-full z-50 mx-auto bg-white border-b-2 pb-5 fixed top-0 transition-transform duration-300 transform"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center p-2 max-md:pb-10"
+      >
+        <!-- Logo -->
+        <a href="#" class="text-gray-800 text-lg font-semibold"
+          ><img
+            src="./assets/logo.png"
+            alt="Your Logo"
+            class="block mx-auto w-24 h-auto sm:w-28 xl:w-104"
+          />
+        </a>
+
+        <!-- Mobile Menu Toggler -->
+        <div class="block lg:hidden">
+          <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+            <svg
+              id="menu-icon-open"
+              class="h-6 w-6 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6ZM3 11C2.44772 11 2 11.4477 2 12C2 12.5523 2.44772 13 3 13H21C21.5523 13 22 12.5523 22 12C22 11.4477 21.5523 11 21 11H3ZM3 17C2.44772 17 2 17.4477 2 18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18C22 17.4477 21.5523 17 21 17H3Z"
+              ></path>
+            </svg>
+            <svg
+              id="menu-icon-close"
+              class="h-6 w-6 fill-current hidden"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M21 6C21 5.44772 20.5523 5 20 5H4C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6ZM4 12C3.44772 12 3 12.4477 3 13C3 13.5523 3.44772 14 4 14H20C20.5523 14 21 13.5523 21 13C21 12.4477 20.5523 12 20 12H4ZM20 17C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18C3 17.4477 3.44772 17 4 17H20Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="hidden lg:flex lg:space-x-5">
+          <li><a href="#" class="nav-link hover:text-gray-600">Home</a></li>
+          <li><a href="#" class="nav-link hover:text-gray-600">About</a></li>
+          <li><a href="#" class="nav-link hover:text-gray-600">Services</a></li>
+          <li><a href="#" class="nav-link hover:text-gray-600">Contact</a></li>
+        </ul>
+
+        <!-- Book Now Button -->
+        <button
+          class="hidden lg:block bg-sky-400 hover:bg-sky-300 text-white py-2 px-4 rounded-full"
+        >
+          Book Now
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="hidden lg:hidden" id="mobile-menu">
+        <ul class="px-4 py-2">
+          <li>
+            <a href="#" class="block text-gray-800 hover:text-gray-600 py-2"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block text-gray-800 hover:text-gray-600 py-2"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block text-gray-800 hover:text-gray-600 py-2"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block text-gray-800 hover:text-gray-600 py-2"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Close Button for Mobile Menu -->
+        <div class="flex justify-end px-1 -mt-6">
+          <button
+            id="close-toggle"
+            class="block w-12 mb-1 bg-gray-300 rounded-md hover:bg-gray-200 text-gray-800 px-2 py-1 focus:outline-none"
+          >
+            <i class="fas fa-times close-icon text-red-600"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="absolute py-2 border-2 w-[75%] md:w-[50%] mx-auto inset-x-0 bg-white bottom-0 flex justify-center -mb-6 md:py-3 rounded-sm"
+      >
+        <div class="sm:flex justify-center text-center mx-auto sm:space-x-5">
+          <div class="flex space-x-2">
+            <i class="fas fa-map-marker-alt"></i>
+            <p class="text-neutral-500">Addis Ababa, Eth</p>
+          </div>
+          <div class="flex space-x-2">
+            <i class="fas fa-phone"></i>
+            <p class="text-neutral-500">+251-943-379-308</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+    <div class="mt-20 relative bg-teal-50">
+      <div class="container mx-auto px-4 flex items-center justify-between">
+        <div class="w-[80%] mx-auto max-md:mt-20 md:w-1/2">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Your Health, Our Priority
+          </h1>
+          <p class="text-lg md:text-xl mb-8">
+            Empowering you to live a healthier life. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit.
+          </p>
+          <a
+            href="#"
+            class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 px-4 rounded-full"
+            >Learn More</a
+          >
+        </div>
+        <div class="w-0 md:w-1/2 responsive-img flex justify-end">
+          <img
+            src="./assets/hero-img.webp"
+            alt="Health Image"
+            class="max-w-[80%] text-end h-auto"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-between p-10 py-20">
+      <div class="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
+        <div
+          class="section bg-white shadow-md rounded-lg p-6 flex md:flex-row items-center"
+        >
+          <div class="flex-shrink-0 mr-6 mb-4 md:mb-0 md:text-center">
+            <i class="fas fa-smile text-4xl text-blue-500"></i>
+          </div>
+          <div class="md:text-left">
+            <div class="count text-2xl font-bold text-gray-800 mb-2">+0</div>
+            <div class="text-sm text-gray-600">Happy Patients</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
+        <div
+          class="section bg-white shadow-md rounded-lg p-6 flex md:flex-row items-center"
+        >
+          <div class="flex-shrink-0 mr-6 mb-4 md:mb-0 md:text-center">
+            <i class="fas fa-code-branch text-4xl text-blue-500"></i>
+          </div>
+          <div class="md:text-left">
+            <div class="count text-2xl font-bold text-gray-800 mb-2">0</div>
+            <div class="text-sm text-gray-600">Total Branches</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
+        <div
+          class="section bg-white shadow-md rounded-lg p-6 flex md:flex-row items-center"
+        >
+          <div class="flex-shrink-0 mr-6 mb-4 md:mb-0 md:text-center">
+            <i class="fas fa-user-md text-4xl text-blue-500"></i>
+          </div>
+          <div class="md:text-left">
+            <div class="count text-2xl font-bold text-gray-800 mb-2">0</div>
+            <div class="text-sm text-gray-600">Senior Doctors</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
+        <div
+          class="section bg-white shadow-md rounded-lg p-6 flex md:flex-row items-center"
+        >
+          <div class="flex-shrink-0 mr-6 mb-4 md:mb-0 md:text-center">
+            <i class="fas fa-graduation-cap text-4xl text-blue-500"></i>
+          </div>
+          <div class="md:text-left">
+            <div class="count text-2xl font-bold text-gray-800 mb-2">0</div>
+            <div class="text-sm text-gray-600">Years of experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section
+      class="w-[98%] sm:w-[90%] min-h-44 md:mx-[5%] bg-gray-100 py-20 rounded-xl my-20"
+    >
+      <h2 class="text-3xl font-semibold text-center text-gray-800 mb-10">
+        Services Offered
+      </h2>
+      <div class="container mx-auto">
+        <div class="flex flex-wrap justify-center gap-8">
+          <!-- Service Item 1 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 w-full md:w-1/2 lg:w-1/4 mb-8 md:pr-4"
+          >
+            <div class="text-center mb-4">
+              <i class="fas fa-user-md text-4xl text-blue-500 mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Primary Care
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Receive personalized primary care services from our expert
+              physicians. From routine check-ups to chronic disease management,
+              we're here to keep you healthy.
+            </p>
+          </div>
+          <!-- Service Item 2 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 w-full md:w-1/2 lg:w-1/4 mb-8 md:pl-4"
+          >
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-briefcase-medical text-4xl text-blue-500 mb-4"
+              ></i>
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Specialized Treatments
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Access advanced treatments for specialized health conditions. Our
+              specialists offer expertise in areas such as cardiology, oncology,
+              neurology, and more.
+            </p>
+          </div>
+          <!-- Service Item 3 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 w-full md:w-1/2 lg:w-1/4 mb-8 md:pr-4"
+          >
+            <div class="text-center mb-4">
+              <i class="fas fa-heartbeat text-4xl text-blue-500 mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Preventive Care
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Stay proactive about your health with our preventive care
+              services. From vaccinations to screenings, we provide the tools
+              and resources to help you prevent illness and maintain wellness.
+            </p>
+          </div>
+          <!-- Service Item 4 -->
+          <div
+            class="bg-white shadow-md rounded-lg p-6 w-full md:w-1/2 lg:w-1/4 mb-8 md:pl-4"
+          >
+            <div class="text-center mb-4">
+              <i class="fas fa-hospital-alt text-4xl text-blue-500 mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Emergency Care
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Receive immediate medical attention in emergency situations. Our
+              emergency care services are available 24/7 to address your urgent
+              healthcare needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 md:px-[20%]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">
+          Answers for Your Questions
+        </h2>
+
+        <!-- Accordion -->
+        <div class="accordion">
+          <!-- Question 1 -->
+          <div class="accordion-item">
+            <!-- Question Header -->
+
+            <button
+              class="w-full accordion-header flex justify-between items-center py-4 focus:outline-none"
+            >
+              <p class="text-lg font-semibold text-gray-800">
+                <i
+                  class="fas fa-hand-point-right text-yellow-500 text-2xl mr-5"
+                ></i>
+                How often should I schedule a check-up?
+              </p>
+              <i class="fas fa-plus text-yellow-500 w-5 h-5"></i>
+            </button>
+
+            <!-- Answer -->
+            <div class="accordion-content hidden">
+              <p class="text-gray-600">
+                It is recommended to schedule a check-up at least once a year to
+                monitor your overall health and address any potential issues
+                early.
+              </p>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="accordion-item">
+            <!-- Question Header -->
+            <button
+              class="w-full accordion-header flex justify-between items-center py-4 focus:outline-none"
+            >
+              <p class="text-lg font-semibold text-gray-800">
+                <i
+                  class="fas fa-hand-point-right text-yellow-500 text-2xl mr-5"
+                ></i>
+                What should I do in case of a medical emergency?
+              </p>
+              <i class="fas fa-plus text-yellow-500 w-5 h-5"></i>
+            </button>
+
+            <!-- Answer -->
+            <div class="accordion-content hidden">
+              <p class="text-gray-600">
+                In case of a medical emergency, dial emergency services
+                immediately (e.g., 911) and follow their instructions while
+                waiting for help to arrive.
+              </p>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="accordion-item">
+            <!-- Question Header -->
+            <button
+              class="w-full accordion-header flex justify-between items-center py-4 focus:outline-none"
+            >
+              <p class="text-lg font-semibold text-gray-800 flex items-center">
+                <i
+                  class="fas fa-hand-point-right text-yellow-500 text-2xl mr-2"
+                ></i>
+                What are some common preventive health measures?
+              </p>
+              <i class="fas fa-plus text-yellow-500 w-5 h-5"></i>
+            </button>
+
+            <!-- Answer -->
+            <div class="accordion-content hidden">
+              <p class="text-gray-600">
+                Common preventive health measures include regular exercise,
+                maintaining a balanced diet, getting adequate sleep, and staying
+                up-to-date with vaccinations and screenings.
+              </p>
+            </div>
+          </div>
+
+          <!-- Add more questions and answers as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <div class="py-20 lg:px-[8%] bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-20">
+          Health Tips & Videos
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 bg-white"
+        >
+          <!-- Video Card 1 -->
+          <div class="bg-white rounded-lg lg:w-[95%] shadow-lg overflow-hidden">
+            <div class="bg-white">
+              <iframe
+                width="100%"
+                height="175"
+                src="https://www.youtube.com/embed/MjMkBaqimFo?autoplay=1&loop=1&mute=1"
+                title="The Emotional Benefits of Exercise"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-1000 mb-3">
+                The Importance of Regular Exercise
+              </h3>
+              <p class="text-gray-600">
+                Learn about the importance of regular exercise for maintaining
+                good health and preventing diseases.
+              </p>
+              <a href="#" class="text-blue-500 font-semibold mt-3 inline-block"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="bg-white rounded-lg lg:w-[95%] shadow-lg overflow-hidden">
+            <iframe
+              width="100%"
+              height="175"
+              src="https://www.youtube.com/embed/XMcab1MFaLc?autoplay=1&loop=1&mute=1"
+              title="A healthy diet, a healthier world"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                Tips for a Balanced Diet
+              </h3>
+              <p class="text-gray-600">
+                Discover some helpful tips for maintaining a balanced diet and
+                making healthier food choices.
+              </p>
+              <a href="#" class="text-blue-500 font-semibold mt-3 inline-block"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="bg-white rounded-lg lg:w-[95%] shadow-lg overflow-hidden">
+            <iframe
+              width="100%"
+              height="175"
+              src="https://www.youtube.com/embed/wnbxp5VGuUg?autoplay=1&loop=1&mute=1"
+              title="What is behavioural activation (BA)? - Psychological therapy for depression explainer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                Managing Stress Effectively
+              </h3>
+              <p class="text-gray-600">
+                Explore effective strategies for managing stress and improving
+                overall well-being.
+              </p>
+              <a href="#" class="text-blue-500 font-semibold mt-3 inline-block"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+
+    <section class="py-16 relative md:flex justify-center items-center">
+      <div
+        class="w-full md:w-[70%] flex justify-center items-center text-center"
+      >
+        <i class="fas fa-phone-alt text-[112px] text-yellow-600"></i>
+      </div>
+
+      <div class="px-4 w-[50%] mx-20 md:mx[15%] md:w-full">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">
+          Contact Us
+        </h1>
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Contact Form -->
+          <div class="bg-cyan-300 rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+              Send us a message
+            </h3>
+            <form action="#" method="POST">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-800 mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  class="w-full border-gray-300 rounded-md p-2"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-800 mb-2"
+                  >Your Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  class="w-full border-gray-300 rounded-md p-2"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block text-gray-800 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Your message here..."
+                  class="w-full border-gray-300 rounded-md p-2"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="bg-gray-100 text-gray-900 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Footer Column 1: About Us -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">About Us</h3>
+            <p class="mb-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget
+              euismod nulla.
+            </p>
+            <p>
+              Curabitur aliquam justo eu diam vehicula, id fermentum sem luctus.
+            </p>
+          </div>
+
+          <!-- Footer Column 2: Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul>
+              <li><a href="#" class="hover:text-blue-400">Home</a></li>
+              <li><a href="#" class="hover:text-blue-400">About Us</a></li>
+              <li><a href="#" class="hover:text-blue-400">Services</a></li>
+              <li><a href="#" class="hover:text-blue-400">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Footer Column 3: Contact Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+            <p class="mb-2">23 Main Street</p>
+            <p>Addis Ababa, NY 10001</p>
+            <p class="mt-4">Phone: (123) 456-7890</p>
+            <p>Email: meleseayen2016@gmail.com</p>
+          </div>
+
+          <!-- Footer Column 4: Social Media -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-xl hover:text-blue-400"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="text-xl hover:text-blue-400"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-xl hover:text-blue-400"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-xl hover:text-blue-400"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-8 border-gray-600" />
+        <div class="text-center">
+          <p>&copy; 2024 Health Institution. All rights reserved.</p>
+          <p class="mt-2">Designed by Wellness Center</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/custom.js"></script>
+  </body>
+</html>
